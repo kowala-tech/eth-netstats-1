@@ -1,3 +1,3 @@
 serve:
-	grunt && WS_SECRET=1 npm start
+	grunt && WS_SECRET=DuHLdsKV6cagynn9 npm start
 
