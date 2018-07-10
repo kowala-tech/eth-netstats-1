@@ -26,6 +26,7 @@ netStatsApp.controller("StatsCtrl", function(
 
   $scope.lastGasLimit = _.fill(Array(MAX_BINS), 2);
   $scope.lastBlocksTime = _.fill(Array(MAX_BINS), 2);
+  $scope.currencyPrice = _.fill(Array(MAX_BINS), 2);
   $scope.transactionDensity = _.fill(Array(MAX_BINS), 2);
   $scope.gasSpending = _.fill(Array(MAX_BINS), 2);
   $scope.validators = [];
@@ -327,6 +328,13 @@ netStatsApp.controller("StatsCtrl", function(
           data.blocktime.length >= MAX_BINS
         )
           $scope.lastBlocksTime = data.blocktime;
+
+        if (
+          !_.isEqual($scope.currencyPrice, data.currencyPrice) &&
+          data.currencyPrice.length >= MAX_BINS
+        )
+          $scope.currencyPrice = data.currencyPrice;
+
 
         if (
           !_.isEqual($scope.blockPropagationChart, data.propagation.histogram)

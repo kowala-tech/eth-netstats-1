@@ -108,7 +108,7 @@ angular
         if (price.length < 19)
           return numberFilter(price.substr(0, price.length - 15)) + " finney";
 
-        return numberFilter(price.substr(0, price.length - 18)) + " ether";
+        return numberFilter(price.substr(0, price.length - 18)) + " kUSD";
       };
     }
   ])
